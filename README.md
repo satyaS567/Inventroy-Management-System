@@ -1,5 +1,6 @@
 # Inventroy-Management-System
 Project Description
+
 This is a web-based Inventory Management System (IMS) built using Django, Python, and the Bootstrap framework. The IMS allows users to manage inventory, create new inventory items, and register and log in to their accounts. It's a practical solution for businesses to keep track of their stock and improve their inventory management processes.
 
 Features
