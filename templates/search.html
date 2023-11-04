@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="">
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><i class="fa-solid fa-house-user"></i>Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/add"><i class="fa-solid fa-plus"></i>Add Inventory</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/signin"><i class="fa-solid fa-user-plus"></i>Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Logout</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-sm-2" type="search" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="py-3 container">
+        <h2 class="mt-1 py-2">Inventory Mangement System</h2>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Purchase Items</th>
+                    <th scope="col">Sold Items</th>
+                    <th scope="col">Item Price/piece</th>
+                    <th scope="col">Sales/Revenue</th>
+                    <th scope="col">Purchase Date</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in product %}
+                <tr>
+                    
+                    <td>{{i.id}}</td>
+                    <td>{{i.productname}}</td>
+                    <td>{{i.purchaseitems}}</td>
+                    <td>{{i.solditems}}</td>
+                    <td>{{i.itempiece}}</td>
+                    <td>{{i.sales}}</td>
+                    <td>{{i.purchasedate}}</td>
+                    
+                    
+                    <td><a class="btn btn-light btn-sm" href="update/{{i.id}}" role="button"><button type="button"
+                                class="btn btn-warning btn-sm"><i
+                                    class="fa-solid fa-pen-to-square"></i></button></a>|<a
+                            class="btn btn-light btn-sm" href="delete/{{i.id}}" role="button"><button type="button"
+                                class="btn btn-danger btn-sm"><i class="fa-regular fa-trash-can"></i></button></a>
+                    </td>
+                    
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    <script src="https://kit.fontawesome.com/7bf304f99c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
